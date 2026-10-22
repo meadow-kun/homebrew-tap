@@ -3,8 +3,8 @@ class LlmSpeed < Formula
 
   desc "Benchmark LLM inference speed on your hardware"
   homepage "https://llm-speed.com"
-  url "https://files.pythonhosted.org/packages/52/69/425252cbfe5ef9da2e37423466dca4b0b7bf95f83a7001e2fae7aca3082c/llm_speed-0.0.8.tar.gz"
-  sha256 "3ebe9df0455cf6d1529d286bb8f8cae226759e77743d257240e8675a351a7382"
+  url "https://files.pythonhosted.org/packages/c5/7a/7b4ff8808df06479e16ab27d142b044c479bc3ed833b21d69016c37c8bdb/llm_speed-0.0.9.tar.gz"
+  sha256 "f230dc1c31ae3c9e62db8e367d536f31993cd55079fa84e801f7bee454fb51ae"
   license "Apache-2.0"
 
   depends_on "cryptography"
@@ -16,8 +16,8 @@ class LlmSpeed < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
-    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
+    url "https://files.pythonhosted.org/packages/a6/bd/1436c50cc46699de0230fbaacc1d1de7bfec413176099949e9d5112e88f2/certifi-2026.10.19.tar.gz"
+    sha256 "035c1e85572b141bf1c3a3eff0e33a8eb74917522f2559075ff8d2fea780a1ae"
   end
 
   resource "h11" do
@@ -41,8 +41,8 @@ class LlmSpeed < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/19/94/80fea1514b7c6d7d37804d3fe9ca81455f633347fc98731bd71ffe1faa17/joserfc-1.7.5.tar.gz"
-    sha256 "d5ff536e658e17664f8c1b1ab60dc4aa62aa973fcef1edd33cc44bda45d6f5ea"
+    url "https://files.pythonhosted.org/packages/bd/15/48ff246732232d35ee234228def22b52455fcc55577f06146602399a29b0/joserfc-1.7.7.tar.gz"
+    sha256 "471d0fd12a5a0d1c0942de280f39efe6f597878315033270b504d4d006d25510"
   end
 
   resource "markdown-it-py" do
@@ -82,11 +82,14 @@ class LlmSpeed < Formula
   test do
     assert_match "llm-speed #{version}", shell_output("#{bin}/llm-speed --version")
     assert_match "--no-upload", shell_output("#{bin}/llm-speed bench --help")
+    assert_match "enroll", shell_output("#{bin}/llm-speed agent --help")
     system libexec/"bin/python", "-c", <<~PYTHON
       import cli.drivers, cli.workloads
       from cli.registry import all_driver_names, all_workload_names
       assert len(all_driver_names()) == 7
       assert len(all_workload_names()) == 7
+      import certifi
+      assert tuple(int(p) for p in certifi.__version__.split(".")) >= (2026, 10, 19), certifi.__version__
     PYTHON
   end
 end
