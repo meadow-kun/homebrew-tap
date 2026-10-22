@@ -7,6 +7,13 @@ class LlmSpeed < Formula
   sha256 "f230dc1c31ae3c9e62db8e367d536f31993cd55079fa84e801f7bee454fb51ae"
   license "Apache-2.0"
 
+  # Track PyPI, not git tags: the mirror has a stale v1.0.2 tag (init commit)
+  # that sorts above real releases.
+  livecheck do
+    url :stable
+    strategy :pypi
+  end
+
   depends_on "cryptography"
   depends_on "python@3.14"
 
