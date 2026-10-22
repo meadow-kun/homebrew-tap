@@ -3,8 +3,8 @@ class LlmSpeed < Formula
 
   desc "Benchmark LLM inference speed on your hardware"
   homepage "https://llm-speed.com"
-  url "https://files.pythonhosted.org/packages/b8/85/194e64ca6f951bcd44dcb2301ad8ff3506612bc17e01dd6005c318c566d9/llm_speed-0.0.7.tar.gz"
-  sha256 "f104e7c6e9334fbd533760787b5989ecc90c03fca6d75a9d3d47dccce55a865c"
+  url "https://files.pythonhosted.org/packages/52/69/425252cbfe5ef9da2e37423466dca4b0b7bf95f83a7001e2fae7aca3082c/llm_speed-0.0.8.tar.gz"
+  sha256 "3ebe9df0455cf6d1529d286bb8f8cae226759e77743d257240e8675a351a7382"
   license "Apache-2.0"
 
   depends_on "cryptography"
