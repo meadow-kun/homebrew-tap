@@ -3,8 +3,8 @@ class LlmSpeed < Formula
 
   desc "Benchmark LLM inference speed on your hardware"
   homepage "https://llm-speed.com"
-  url "https://files.pythonhosted.org/packages/9c/1d/302b0b374f0032879175324f4f7399b90d81c9c332316bd1fc03307fc8ff/llm_speed-0.0.13.tar.gz"
-  sha256 "62296d1fb95999e4b7c892e33aa2cf610c6e284d7a4637fb238ff960a77b33c7"
+  url "https://files.pythonhosted.org/packages/af/ed/7e4874c7bcfd893832483b758a9b0139e3b172a12813c622d93b64323d2f/llm_speed-0.0.14.tar.gz"
+  sha256 "e9e898c70547b1e0e74ffa2e0565ee21c1081b647079d80943f13abeabf65bde"
   license "Apache-2.0"
 
   # Track PyPI, not git tags: the mirror has a stale v1.0.2 tag (init commit)
