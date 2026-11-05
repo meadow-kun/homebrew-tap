@@ -3,8 +3,8 @@ class LlmSpeed < Formula
 
   desc "Benchmark LLM inference speed on your hardware"
   homepage "https://llm-speed.com"
-  url "https://files.pythonhosted.org/packages/70/39/027242124cc3b701795a4b13781155f66842246e917adda307248b6f1775/llm_speed-0.0.15.tar.gz"
-  sha256 "517139a19b5b28907963209eb182fa5d02c164a69a4cc42cc965d7be3efc6d8c"
+  url "https://files.pythonhosted.org/packages/f8/3d/7fe20107bb289d58071db1eff02c5ae9e5120be280e07cbd15029fda63b2/llm_speed-0.0.16.tar.gz"
+  sha256 "082a83d3f6c3d0fd2a9f2d06a8d5af8c58488ef5058260884a842c7ee42c83f0"
   license "Apache-2.0"
 
   # Track PyPI, not git tags: the mirror has a stale v1.0.2 tag (init commit)
@@ -60,6 +60,11 @@ class LlmSpeed < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "psutil" do
